@@ -1,0 +1,27 @@
+# SQLite. Versions 3.8.0 and up are supported.
+#   gem install sqlite3
+#
+#   Ensure the SQLite 3 gem is defined in your Gemfile
+#   gem "sqlite3"
+#
+shared: &shared
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS", "5") %>
+  username: <%= ENV.fetch('DATABASE_USERNAME') %>
+  password: <%= ENV.fetch('DATABASE_PASSWORD') %>
+  host: <%= ENV.fetch('DATABASE_HOST') %>
+  port: <%= ENV.fetch('DATABASE_PORT') %>
+  min_messages: warning
+
+development: &development
+  <<: *shared
+  database: railcar_development
+
+test: &test
+  <<: *shared
+  database: railcar_test
+
+production:
+  <<: *shared
+  database: railcar_production
