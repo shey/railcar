@@ -27,7 +27,9 @@ In Railcar, environment variables are handled by Railroad. It's worth noting tha
 ## Deploying
 
 #### Make ssh-agent happy
-pkill ssh-agent && eval `ssh-agent` ^C  ssh-add ~/.ssh/id_rsa
+```sh
+pkill ssh-agent && eval `ssh-agent` && ssh-add ~/.ssh/id_rsa
+```
 
 #### Confirm access to git
 SSH into your server, `ssh rails@yourappdomain.com`, and run `ssh -T git@github.com` to ensure your keys are forwarded to Github.
