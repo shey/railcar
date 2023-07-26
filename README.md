@@ -46,4 +46,4 @@ Railcar is open-source software, licensed under [The MIT License](LICENSE).
 ## Support
 For support and additional queries, please contact shey@shey.ca.
 
-Note: Railcar is designed to be used in conjunction with the Railroad Ansible project. For optimal results, I recommend deploying Railcar to a server configured using Railroad.
+Note: Railcar is designed to be used in conjunction with the Railroad Ansible project. For optimal results, deploy Railcar to a server configured using Railroad.
