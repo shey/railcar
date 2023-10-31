@@ -3,8 +3,8 @@
     alert: :warning
   }
 %>
-<% flash.each do |type, msg| %>
-  <div class="alert alert-<%= alert_type[type.to_sym] %>">
-    <%= msg %>
+<% flash.each do |type, message| %>
+  <div class="<%= flash_classes(type) %>">
+    <%= message %>
   </div>
 <% end %>

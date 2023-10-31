@@ -12,8 +12,11 @@
   </head>
 
   <body>
+      <header>
+        <%= render "shared/flash_messages" %>
+        <%= render "shared/navbar" %>
+    </header>
     <main class="flex h-screen bg-gray-200 justify-center p-20">
-      <%= render partial: 'shared/flash_messages' %>
       <%= yield %>
     </main>
   </body>
