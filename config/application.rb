@@ -13,6 +13,7 @@ module Railcar
     config.active_support.cache_format_version = 7.0
     config.action_controller.raise_on_open_redirects = true
     config.action_view.button_to_generates_button_tag = true
+    config.action_view.preload_links_header = false
 
     # Configuration for the application, engines, and railties goes here.
     #
