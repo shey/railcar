@@ -86,3 +86,5 @@ gem 'pg'                      # everyone's favorite database
 gem "amazing_print"           # for rails_semantic_logger
 gem "rails_semantic_logger"   # structured logging
 
+
+gem "devise", "~> 4.9"
