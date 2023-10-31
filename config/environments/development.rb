@@ -59,10 +59,12 @@ Rails.application.configure do
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 
-  # all the structured logging goodness
-  # Can't seem to turn off started/processing/rendered messages
-  $stdout.sync = true
-  config.rails_semantic_logger.add_file_appender = false
-  config.semantic_logger.add_appender(io: $stdout, formatter: config.rails_semantic_logger.format)
+  # Raises error for missing translations.
+  # config.i18n.raise_on_missing_translations = true
 
+  # Annotate rendered view with file names.
+  # config.action_view.annotate_rendered_view_with_filenames = true
+
+  # Uncomment if you wish to allow Action Cable access from any origin.
+  # config.action_cable.disable_request_forgery_protection = true
 end
