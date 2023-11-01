@@ -1,15 +1,25 @@
 <nav class="navbar">
-  <span class="toggle-nav" id="toggle-nav">
-  </span>
-
   <a href="#" class="logo">
     <p>Railcar</p>
   </a>
   <!-- </div> -->
-  <ul class="main-nav" id="main-nav">
-  <li><a href="#" class="nav-links">Home</a></li>
-  <li><a href="#" class="nav-links">Account</a></li>
-  <li><a href="#" class="nav-links">Conatct</a></li>
-  <li><a href="#" class="nav-links">About</a></li>
+    <ul class="main-nav" id="main-nav">
+    <li><a href="#" class="nav-links">Home</a></li>
+    <li class="nav-item dropdown">
+      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <% if user_signed_in? %>
+          <li><%= current_user.email %></li>
+          <li><hr class="dropdown-divider"></li>
+          <li>
+            <%= link_to "Sign Out", destroy_user_session_path, class: 'dropdown-item' %>
+          </li>
+        <% else %>
+          <li><%= link_to "Sign In", new_user_session_path, class: 'dropdown-item' %><li>
+          <li><%= link_to "Sign Up", new_user_registration_path, class: 'dropdown-item' %><li>
+        <% end %>
+      </ul>
+    </li>
+
+    <li><a href="#" class="nav-links">About</a></li>
   </ul>
 </nav>
