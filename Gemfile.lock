@@ -122,6 +122,7 @@ GEM
       activesupport (>= 6.1)
     hooves (0.7)
       unicorn (> 0)
+    htmlbeautifier (1.4.2)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     importmap-rails (1.2.3)
@@ -288,6 +289,7 @@ DEPENDENCIES
   dotenv-rails
   ed25519
   hooves
+  htmlbeautifier
   importmap-rails
   jbuilder
   pg
