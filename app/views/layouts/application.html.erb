@@ -6,19 +6,16 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-
-  <body>
-      <header>
-        <%= render "shared/flash_messages" %>
-        <%= render "shared/navbar" %>
+  <body class="font-sans font-normal leading-normal text-gray-800 bg-white flex flex-col min-h-screen ">
+    <header>
+      <%= render "shared/flash_messages" %>
+      <%= render "shared/navbar" %>
     </header>
-    <main class="body">
+    <main class="flex-grow">
       <%= yield %>
     </main>
   </body>
 </html>
-

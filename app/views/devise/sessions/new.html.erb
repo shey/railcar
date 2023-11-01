@@ -7,17 +7,6 @@
                          class: "bg-white mb-4 px-8 pt-6 pb-8 rounded shadow-md"
                  }
         ) do |f| %>
-    <%= devise_simple_error_messages! %>
-    <% if flash.present? %>
-      <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-4" role="alert">
-        <p class="font-bold">Oops!</p>
-        <%- flash.each do |name, msg| -%>
-          <%= content_tag :p,
-                                    msg.humanize,
-                                    id: "flash_#{name}" if msg.is_a?(String) %>
-        <%- end -%>
-      </div>
-    <% end %>
     <div class="mb-4">
       <%= f.label :email, class: "block text-gray-700 text-sm font-bold mb-2" %>
       <%= f.email_field :email, autofocus: true, autocomplete: "email",

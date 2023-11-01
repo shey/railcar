@@ -3,26 +3,6 @@
 # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
 # devise helper
 module DeviseHelper
-  def devise_error_messages!
-    return if resource.errors.empty?
-
-    messages = resource.errors.full_messages.map { |msg| content_tag(:p, "- #{msg}.") }
-                       .join
-    sentence = I18n.t(
-      "errors.messages.not_saved",
-      count: resource.errors.count,
-      resource: resource.class.model_name.human.downcase
-    )
-
-    html = <<-HTML
-      <div class="bg-red-100 border-l-4 border-red-500 mb-4 p-4 text-red-700" role="alert">
-          <p class="font-bold">Oops!</p>
-          <p>#{sentence}</p>#{messages}
-      </div>
-    HTML
-
-    html.html_safe
-  end
 
   def devise_simple_error_messages!
     return if resource.errors.empty?
