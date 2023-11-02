@@ -1,42 +1,30 @@
-<nav class="flex flex-wrap items-center justify-between py-3 text-gray-700 bg-white container mx-auto px-4" data-controller="nav">
-  <div class="flex items-center mr-6 flex-no-shrink">
-    <%= link_to root_path, class:"link text-xl tracking-tight font-black" do %>
-      <span class="sr-only">Railcar</span>
-      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-train" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-        <path d="M21 13c0 -3.87 -3.37 -7 -10 -7h-8"></path>
-        <path d="M3 15h16a2 2 0 0 0 2 -2"></path>
-        <path d="M3 6v5h17.5"></path>
-        <path d="M3 10l0 4"></path>
-        <path d="M8 11l0 -5"></path>
-        <path d="M13 11l0 -4.5"></path>
-        <path d="M3 19l18 0"></path>
-      </svg>
-    <% end %>
-  </div>
-  <div class="block lg:hidden">
-    <button class="flex items-center p-2 -mr-1 rounded-lg focus:bg-gray-100" data-action="click->nav#toggleMenu touch->nav#toggleMenu">
-      <svg class="stroke-current text-gray-500 w-7 h-7" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><title>Menu</title><g fill="none"><path d="M4 6h16M4 12h8m-8 6h16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g></svg>
-    </button>
-  </div>
-  <div class="items-center w-full text-center lg:flex-1 lg:flex lg:text-left pt-2 lg:pt-0 hidden" data-nav-target="menu">
-    <div class="items-center block w-full mt-2 text-center lg:flex lg:flex-row lg:flex-1 lg:mt-0 lg:text-left lg:justify-end">
-      <% if user_signed_in? %>
-        <%= link_to "Edit account", edit_user_registration_path, class: "p-3 hover:bg-gray-50 transition ease duration-300 rounded-lg text-center focus:bg-gray-100 lg:inline-block block" %>
-        <%= button_to "Log out", destroy_user_session_path, method: :delete, class:"p-3 hover:bg-gray-50 transition ease duration-300 rounded-lg text-center focus:bg-gray-100 lg:inline-block block" %>
-      <% else %>
-        <%= link_to "Sign in", new_user_session_path, class:"p-3 hover:bg-gray-50 transition ease duration-300 rounded-lg text-center focus:bg-gray-100 lg:inline-block block" %>
-        <%= link_to "Sign up", new_user_registration_path, class:"p-3 hover:bg-gray-50 transition ease duration-300 rounded-lg text-center focus:bg-gray-100 lg:inline-block block lg:ml-2" %>
-        <span class="h-5 w-px bg-gray-200 mx-3"></span>
-        <%= link_to "https://github.com/shey/railcar", target: :_blank, class: "group lg:ml-2 flex justify-center" do %>
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-rocket" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-            <path d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3"></path>
-            <path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3"></path>
-            <path d="M15 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
-          </svg>
-        <% end %>
+<div class="bg-white p-4 shadow-md">
+  <div class="container mx-auto">
+    <nav class="flex justify-between">
+      <%= link_to root_path, class:"link text-xl tracking-tight font-black" do %>
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-train" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M21 13c0 -3.87 -3.37 -7 -10 -7h-8"></path>
+          <path d="M3 15h16a2 2 0 0 0 2 -2"></path>
+          <path d="M3 6v5h17.5"></path>
+          <path d="M3 10l0 4"></path>
+          <path d="M8 11l0 -5"></path>
+          <path d="M13 11l0 -4.5"></path>
+          <path d="M3 19l18 0"></path>
+        </svg>
       <% end %>
-    </div>
+      <ul class="flex space-x-6">
+        <li><a href="#" class="text-gray-700 hover:text-black">Features</a></li>
+        <li><a href="#" class="text-gray-700 hover:text-black">Pricing</a></li>
+        <li><a href="#" class="text-gray-700 hover:text-black">About</a></li>
+        <% if user_signed_in? %>
+          <li><%= link_to "Edit account", edit_user_registration_path, class: "text-gray-700 hover:text-black" %></li>
+          <li><%= button_to "Log out", destroy_user_session_path, method: :delete, class:"text-gray-700 hover:text-black" %></li>
+        <% else %>
+          <li><%= link_to "Sign in", new_user_session_path, class:"text-gray-700 hover:text-black" %></li>
+          <li><%= link_to "Sign up", new_user_registration_path, class:"text-gray-700 hover:text-black" %></li>
+        <% end %>
+      </ul>
+    </nav>
   </div>
-</nav>
+</div>
