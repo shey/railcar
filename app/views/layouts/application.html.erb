@@ -15,7 +15,9 @@
       <%= render "shared/navbar" %>
     </header>
     <main class="flex-grow antialiased">
-      <%= yield %>
+      <div class="flex flex-col items-center mx-auto px-auto container py-10">
+        <%= yield %>
+      </div>
     </main>
   </body>
 </html>
