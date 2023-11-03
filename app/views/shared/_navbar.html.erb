@@ -1,0 +1,30 @@
+<div class="bg-white p-4 shadow-md items-center justify-between">
+  <div class="container mx-auto">
+    <nav class="flex justify-between">
+      <%= link_to root_path, class:"link text-xl tracking-tight font-black" do %>
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-train" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M21 13c0 -3.87 -3.37 -7 -10 -7h-8"></path>
+          <path d="M3 15h16a2 2 0 0 0 2 -2"></path>
+          <path d="M3 6v5h17.5"></path>
+          <path d="M3 10l0 4"></path>
+          <path d="M8 11l0 -5"></path>
+          <path d="M13 11l0 -4.5"></path>
+          <path d="M3 19l18 0"></path>
+        </svg>
+      <% end %>
+      <ul class="flex space-x-6">
+        <li><a href="#" class="text-gray-700 hover:text-black">Features</a></li>
+        <li><a href="#" class="text-gray-700 hover:text-black">Pricing</a></li>
+        <li><a href="#" class="text-gray-700 hover:text-black">About</a></li>
+        <% if user_signed_in? %>
+          <li><%= link_to "Edit account", edit_user_registration_path, class: "text-gray-700 hover:text-black" %></li>
+          <li><%= button_to "Log out", destroy_user_session_path, method: :delete, class:"text-gray-700 hover:text-black" %></li>
+        <% else %>
+          <li><%= link_to "Sign in", new_user_session_path, class:"text-gray-700 hover:text-black" %></li>
+          <li><%= link_to "Sign up", new_user_registration_path, class:"text-gray-700 hover:text-black" %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</div>

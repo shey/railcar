@@ -77,6 +77,7 @@ group :development do
   gem 'ed25519'
   gem 'bcrypt_pbkdf'
   gem 'dotenv-deployment'
+  gem 'htmlbeautifier'
 end
 
 
@@ -86,3 +87,5 @@ gem 'pg'                      # everyone's favorite database
 gem "amazing_print"           # for rails_semantic_logger
 gem "rails_semantic_logger"   # structured logging
 
+
+gem "devise", "~> 4.9"
