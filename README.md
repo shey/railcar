@@ -2,12 +2,13 @@
 
 Welcome to Railcar, a quick-start Rails 7 solution, specifically designed to work with the Railroad server configuration.
 
-Railcar is a fully setup Rails 7.0.5 application and the the companion to the Railroad Ansible project. It provides you with a Docker-free setup to kickstart your Rails application development.
+Railcar is a fully setup Rails 7.0.8 application and the the companion to the Railroad Ansible project. It provides you with a Docker-free setup to kickstart your Rails application development.
 
 ### Key Features
-* Rails 7.0.5
+* Rails 7.0.8
 * Tailwind CSS
-* Capistrano
+* Authentication with Devise 4.9
+* Deployment ready with Capistrano
 * Postgresql
 * Unicorn
 * Ruby 3.1.2
