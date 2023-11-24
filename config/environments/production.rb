@@ -21,7 +21,7 @@ Rails.application.configure do
   config.require_master_key = false
 
   # Credentials and ENV vars are handled by dotenv-rails and ansible
-  config.secret_key_base = '<%= ENV["SECRET_KEY_BASE"] %>'
+  config.secret_key_base = ENV["SECRET_KEY_BASE"]
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
